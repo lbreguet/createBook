@@ -1,51 +1,52 @@
 {{#each posts as |post|}}
-  <div data-id='{{post.id}}'>
-    <h3>{{post.title}}</h3>
-    <p>{{post.content}}</p>
-  </div>
+  <div class="post-content">
+    <div data-id='{{post.id}}'>
+      <h3 class="index-title" data-id='{{post.id}}'>{{post.title}}</h3>
+    </div>
 
-  {{#if post.editable}}
-    <div>
-      <div data-id="{{post.id}}" class="btn-group post-destroy">
-        <button type="button" data-id="{{post.id}}" class="btn btn-danger">
+    {{#if post.editable}}
+      <div>
+        <div data-id="{{post.id}}" class="btn-group post-destroy">
+          <button type="button" data-id="{{post.id}}" class="btn btn-danger">
     Delete
     </button>
-      </div>
+        </div>
 
-      <button data-id="{{post.id}}" type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" id="edit-modal">Edit</button>
+        <button data-id="{{post.id}}" type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" id="edit-modal">Edit</button>
 
-      <div data-id="{{post.id}}" class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title" id="exampleModalLabel">Edit Article</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div data-id="{{post.id}}" class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel">Edit Article</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-            </div>
-            <p class="update-failure"></p>
-            <div class="modal-body">
-              <form data-id="{{post.id}}" class="modal-edit" id="edit-post">
-                <div class="form-group">
-                  <label for="title-name" class="form-control-label">Title:</label>
-                  <br>
-                  <input data-id="{{post.title}}" class="edit-title" type="text" name="post[title]" value="{{post.title}}">
+              </div>
+              <p class="update-failure"></p>
+              <div class="modal-body">
+                <form data-id="{{post.id}}" class="modal-edit" id="edit-post">
+                  <div class="form-group">
+                    <label for="title-name" class="form-control-label">Title:</label>
+                    <br>
+                    <input data-id="{{post.title}}" class="edit-title" type="text" name="post[title]" value="{{post.title}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="message-text" class="form-control-label">Content:</label>
+                    <br>
+                    <textarea data-id="{{post.content}}" class="edit-content" name="post[content]" value="{{post.content}}">{{post.content}}</textarea>
+                  </div>
+                  <button data-id="{{post.id}}" type="submit" class="btn btn-default">Confirm</button>
+                </form>
+                <div class="modal-footer">
                 </div>
-                <div class="form-group">
-                  <label for="message-text" class="form-control-label">Content:</label>
-                  <br>
-                  <textarea data-id="{{post.content}}" class="edit-content" name="post[content]" value="{{post.content}}">{{post.content}}</textarea>
-                </div>
-                <button data-id="{{post.id}}" type="submit" class="btn btn-default">Confirm</button>
-              </form>
-              <div class="modal-footer">
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  {{else}}
-    <div></div>
-  {{/if}}
+    {{else}}
+      <div></div>
+    {{/if}}
+  </div>
 {{/each}}

@@ -19,12 +19,20 @@ const onGetPosts = (event) => {
   }
 }
 
+const onMenu = (event) => {
+  event.preventDefault()
+  api.index()
+    .then(ui.indexSuccess)
+    .catch(ui.failure)
+
+}
+
 const onShowPost = (event) => {
   event.preventDefault()
-  let data = getFormFields(event.target)
-  let id = data.post.id
+  console.log(event.target)
+  let id = event.target.dataset.id
   api.show(id)
-    .then(ui.success)
+    .then(ui.showSuccess)
     .catch(ui.failure)
 }
 
@@ -54,11 +62,12 @@ const onDestroyPost = (event) => {
 }
 
 const addHandlers = () => {
+  $('.menu').on('click', onMenu)
   $('#index-post').on('submit', onGetPosts)
-  $('#show-post').on('submit', onShowPost)
+  $('.content').on('dblclick', '.index-title', onShowPost)
   $('#create-post').on('submit', onCreatePost)
-  $('.post-content').on('submit', '#edit-post', onUpdatePost)
-  $('.post-content').on('click', '.post-destroy', onDestroyPost)
+  $('.content').on('submit', '#edit-post', onUpdatePost)
+  $('.content').on('click', '.post-destroy', onDestroyPost)
 }
 
 module.exports = {

@@ -1,2 +1,18 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.index-title {
+  margin-right: 100%;
+}
+
+.index-title:hover {
+  cursor: pointer;
+}
+
+.menu {
+  margin-right: 100%;
+}
+
+.menu:hover {
+  cursor: pointer;
+}
