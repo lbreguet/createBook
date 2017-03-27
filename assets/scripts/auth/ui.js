@@ -24,6 +24,9 @@ const signInSuccess = () => {
   $('#change-password').show()
   $('#sign-out').show()
   $('.auth-message').text('Successfully signed in!').css('color', 'green').show(0).delay(1000).fadeOut(500)
+  $('.create-container').show()
+  $('.content').show()
+  $('#index-post').show()
 }
 
 const signInFailure = () => {
@@ -55,6 +58,8 @@ const signOutSuccess = () => {
   $('.signin-email').val('')
   $('.signin-password').val('')
   $('.content').empty()
+  $('.create-container').hide()
+  $('#index-post').hide()
 }
 
 const signOutFailure = () => {

@@ -2,7 +2,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 $sky-blue: rgb(93, 106, 219);
+$grey: rgb(111, 124, 119);
 $black: rgb(0, 0, 0);
+$red: rgb(255, 0, 0);
 
 .btn {
   color: $sky-blue;
@@ -10,6 +12,19 @@ $black: rgb(0, 0, 0);
 
 .create-container {
   border: 1px solid $black;
+  margin-right: 75%;
+}
+
+.create-css {
+  padding-top: 15px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.index-post {
+  padding-top: 15px;
 }
 
 .index-title {
@@ -17,6 +32,7 @@ $black: rgb(0, 0, 0);
 }
 
 .index-title:hover {
+  background: $red;
   cursor: pointer;
 }
 
@@ -25,5 +41,6 @@ $black: rgb(0, 0, 0);
 }
 
 .menu:hover {
+  background: $red;
   cursor: pointer;
 }

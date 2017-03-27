@@ -7,12 +7,14 @@ const indexSuccess = (data) => {
   console.log(data)
   const indexPostsHtml = indexPostsTemplate({ posts: data.posts })
   $('.content').empty().append(indexPostsHtml)
+  $('.create-css').show()
 }
 
 const showSuccess = (data) => {
   console.log(data)
   const showPostHtml = showPostTemplate({ post: data.post })
   $('.content').empty().append(showPostHtml)
+  $('.create-css').hide()
 }
 
 const createSuccess = (data) => {
