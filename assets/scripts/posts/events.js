@@ -59,7 +59,7 @@ const addHandlers = () => {
   $('#show-post').on('submit', onShowPost)
   $('#create-post').on('submit', onCreatePost)
   $('#update-post').on('submit', onUpdatePost)
-  $('#delete-post').on('submit', onDestroyPost)
+  $('#destroy-post').on('submit', onDestroyPost)
 }
 
 module.exports = {
