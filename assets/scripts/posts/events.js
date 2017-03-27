@@ -10,11 +10,11 @@ const onGetPosts = (event) => {
   let data = getFormFields(event.target)
   if (data.post.title) {
     api.searchPosts(data.post)
-      .then(ui.success)
+      .then(ui.indexSuccess)
       .catch(ui.failure)
   } else {
     api.index()
-      .then(ui.success)
+      .then(ui.indexSuccess)
       .catch(ui.failure)
   }
 }
@@ -39,7 +39,7 @@ const onCreatePost = (event) => {
 const onUpdatePost = (event) => {
   event.preventDefault()
   let data = getFormFields(event.target)
-  let id = data.post.id
+  let id = event.target.dataset.id
   api.update(data, id)
     .then(ui.success)
     .catch(ui.failure)
@@ -47,8 +47,7 @@ const onUpdatePost = (event) => {
 
 const onDestroyPost = (event) => {
   event.preventDefault()
-  let data = getFormFields(event.target)
-  let id = data.post.id
+  let id = event.target.dataset.id
   api.destroy(id)
     .then(ui.success)
     .catch(ui.failure)
@@ -58,8 +57,8 @@ const addHandlers = () => {
   $('#index-post').on('submit', onGetPosts)
   $('#show-post').on('submit', onShowPost)
   $('#create-post').on('submit', onCreatePost)
-  $('#update-post').on('submit', onUpdatePost)
-  $('#destroy-post').on('submit', onDestroyPost)
+  $('.post-content').on('submit', '#edit-post', onUpdatePost)
+  $('.post-content').on('click', '.post-destroy', onDestroyPost)
 }
 
 module.exports = {
