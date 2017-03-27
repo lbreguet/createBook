@@ -10,7 +10,7 @@ const store = require('../store')
 const onSignUp = function (event) {
   event.preventDefault()
 
-  let data = getFormFields(event.target)
+  const data = getFormFields(event.target)
 
   api.signUp(data)
   .then(ui.signUpSuccess)
@@ -19,7 +19,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  let data = getFormFields(event.target)
+  const data = getFormFields(event.target)
   api.signIn(data)
   .then((response) => {
     store.user = response.user
@@ -31,7 +31,7 @@ const onSignIn = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  let data = getFormFields(event.target)
+  const data = getFormFields(event.target)
   api.changePassword(data)
   .then(ui.changePasswordSuccess)
   .catch(ui.changePasswordFailure)

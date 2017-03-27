@@ -15,6 +15,15 @@ const showSuccess = (data) => {
   $('.content').empty().append(showPostHtml)
 }
 
+const createSuccess = (data) => {
+  console.log(data)
+}
+
+const updateSuccess = (data) => {
+  console.log(data)
+  $('#myModal').modal('hide')
+}
+
 const success = (data) => {
   console.log(data)
 }
@@ -26,6 +35,8 @@ const failure = (error) => {
 module.exports = {
   indexSuccess,
   showSuccess,
+  createSuccess,
+  updateSuccess,
   success,
   failure
 }

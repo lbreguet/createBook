@@ -54,6 +54,7 @@ const signOutSuccess = () => {
   $('.signup-password').val('')
   $('.signin-email').val('')
   $('.signin-password').val('')
+  $('.content').empty()
 }
 
 const signOutFailure = () => {

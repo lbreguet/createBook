@@ -7,16 +7,10 @@ const ui = require('./ui')
 
 const onGetPosts = (event) => {
   event.preventDefault()
-  let data = getFormFields(event.target)
-  if (data.post.title) {
-    api.searchPosts(data.post)
-      .then(ui.indexSuccess)
-      .catch(ui.failure)
-  } else {
-    api.index()
-      .then(ui.indexSuccess)
-      .catch(ui.failure)
-  }
+  const data = getFormFields(event.target)
+  api.searchPosts(data.post)
+    .then(ui.indexSuccess)
+    .catch(ui.failure)
 }
 
 const onMenu = (event) => {
@@ -24,13 +18,11 @@ const onMenu = (event) => {
   api.index()
     .then(ui.indexSuccess)
     .catch(ui.failure)
-
 }
 
 const onShowPost = (event) => {
   event.preventDefault()
-  console.log(event.target)
-  let id = event.target.dataset.id
+  const id = event.target.dataset.id
   api.show(id)
     .then(ui.showSuccess)
     .catch(ui.failure)
@@ -38,7 +30,7 @@ const onShowPost = (event) => {
 
 const onCreatePost = (event) => {
   event.preventDefault()
-  let data = getFormFields(event.target)
+  const data = getFormFields(event.target)
   api.create(data)
     .then(ui.success)
     .catch(ui.failure)
@@ -46,18 +38,20 @@ const onCreatePost = (event) => {
 
 const onUpdatePost = (event) => {
   event.preventDefault()
-  let data = getFormFields(event.target)
-  let id = event.target.dataset.id
+  const data = getFormFields(event.target)
+  const id = event.target.dataset.id
   api.update(data, id)
     .then(ui.success)
+    .then(onShowPost(event))
     .catch(ui.failure)
 }
 
 const onDestroyPost = (event) => {
   event.preventDefault()
-  let id = event.target.dataset.id
+  const id = event.target.dataset.id
   api.destroy(id)
     .then(ui.success)
+    .then(onMenu(event))
     .catch(ui.failure)
 }
 

@@ -1,6 +1,17 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+$sky-blue: rgb(93, 106, 219);
+$black: rgb(0, 0, 0);
+
+.btn {
+  color: $sky-blue;
+}
+
+.create-container {
+  border: 1px solid $black;
+}
+
 .index-title {
   margin-right: 100%;
 }
