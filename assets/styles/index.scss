@@ -2,6 +2,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 $sky-blue: rgb(93, 106, 219);
+$blue: rgb(0, 48, 255);
 $grey: rgb(111, 124, 119);
 $black: rgb(0, 0, 0);
 $red: rgb(255, 0, 0);
@@ -12,11 +13,22 @@ $red: rgb(255, 0, 0);
 
 .create-container {
   border: 1px solid $black;
-  margin-right: 75%;
+  margin-left: 30%;
+  margin-right: 30%;
 }
 
 .create-css {
   padding-top: 15px;
+  text-align: center;
+}
+
+.back-to-menu {
+  color: $blue;
+  margin-right: 100%;
+}
+
+.back-to-menu:hover {
+  cursor: pointer;
 }
 
 textarea {
@@ -24,7 +36,9 @@ textarea {
 }
 
 .index-post {
+  clear: both;
   padding-top: 15px;
+  text-align: right;
 }
 
 .index-title {

@@ -57,6 +57,7 @@ const onDestroyPost = (event) => {
 
 const addHandlers = () => {
   $('.menu').on('click', onMenu)
+  $('.content').on('click', '.back-to-menu', onMenu)
   $('#index-post').on('submit', onGetPosts)
   $('.content').on('dblclick', '.index-title', onShowPost)
   $('#create-post').on('submit', onCreatePost)
