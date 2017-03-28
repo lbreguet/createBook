@@ -42,7 +42,7 @@ const onUpdatePost = (event) => {
   const data = getFormFields(event.target)
   const id = event.target.dataset.id
   api.update(data, id)
-    .then(ui.success)
+    .then(ui.updateSuccess)
     .then(() => onMenu())
     .catch(ui.failure)
 }
