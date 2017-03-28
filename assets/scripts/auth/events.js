@@ -9,9 +9,7 @@ const store = require('../store')
 
 const onSignUp = function (event) {
   event.preventDefault()
-
   const data = getFormFields(event.target)
-
   api.signUp(data)
   .then(ui.signUpSuccess)
   .catch(ui.signUpFailure)
@@ -51,10 +49,13 @@ const addHandlers = () => {
   $('#sign-up').show()
   $('#sign-in').show()
   $('#sign-out').hide()
-  $('#change-password').hide()
-  $('#sign-up').on('submit', onSignUp)
+  $('.change-password').hide()
+  $('.auth').on('click', '.back-to-signin', ui.signInShow)
+  $('.sign-up').on('click', ui.signUpShow)
+  $('.change-password').on('click', ui.changePasswordShow)
+  $('.auth').on('submit', '#sign-up', onSignUp)
   $('#sign-in').on('submit', onSignIn)
-  $('#change-password').on('submit', onChangePassword)
+  $('.auth').on('submit', '#change-password', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
   $('#index-post').hide()
   $('.create-container').hide()
