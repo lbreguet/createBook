@@ -18,7 +18,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title" id="myModalLabel">Edit Article</h4>
+              <h4 class="modal-title" id="myModalLabel">Edit Post</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -29,12 +29,12 @@
                 <div class="form-group">
                   <label for="title-name" class="form-control-label">Title:</label>
                   <br>
-                  <input data-id="{{post.title}}" class="edit-title" type="text" name="post[title]" value="{{post.title}}" maxlength="150">
+                  <input data-id="{{post.title}}" class="edit-title" type="text" name="post[title]" value="{{post.title}}" maxlength="50">
                 </div>
                 <div class="form-group">
                   <label for="message-text" class="form-control-label">Content:</label>
                   <br>
-                  <textarea data-id="{{post.content}}" class="edit-content" name="post[content]" value="{{post.content}}" maxlength="1000">{{post.content}}</textarea>
+                  <textarea data-id="{{post.content}}" class="edit-content" name="post[content]" value="{{post.content}}" maxlength="282" rows="7">{{post.content}}</textarea>
                 </div>
                 <button data-id="{{post.id}}" type="submit" class="btn btn-default">Confirm</button>
               </form>
@@ -48,6 +48,7 @@
   {{else}}
     <div></div>
   {{/if}}
+  <div class="index-comment">{{> ../comments/index-comment}}</div>
   <br>
   <h4 class="back-to-menu">Back</h4>
 </div>
