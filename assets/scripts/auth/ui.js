@@ -40,7 +40,7 @@ const signInSuccess = () => {
   $('.change-password').show()
   $('#sign-out').show()
   $('.auth-message').text('Successfully signed in!').css('color', 'green').show(0).delay(1000).fadeOut(500)
-  $('.create-container').show()
+  $('.create-css').empty()
   $('.content').show()
   $('#index-post').show()
   $('.auth').empty()
@@ -82,7 +82,7 @@ const signOutSuccess = () => {
   $('.signin-password').val('')
   $('.content').empty()
   $('.auth').empty()
-  $('.create-container').hide()
+  $('.create-css').empty()
   $('#index-post').hide()
 }
 

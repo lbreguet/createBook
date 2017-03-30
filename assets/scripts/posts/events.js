@@ -27,8 +27,8 @@ const onShowPost = (event) => {
   const id = event.target.dataset.id
   api.show(id)
     .then(ui.showSuccess)
-    .then(commentsApi.index(id)
-          .then((data) => commentsUi.indexSuccess(data, id)))
+    .then(() => commentsApi.index(id))
+    .then((data) => commentsUi.indexSuccess(data, id))
     .catch(ui.failure)
 }
 

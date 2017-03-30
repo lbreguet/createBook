@@ -1,12 +1,15 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-
 $sky-blue: rgb(93, 106, 219);
 $blue: rgb(0, 48, 255);
 $grey: rgb(111, 124, 119);
 $black: rgb(0, 0, 0);
 $red: rgb(255, 0, 0);
 $white: rgb(255, 255, 255);
+
+.create-book-title {
+  font-family: 'Ubuntu', sans-serif;
+}
 
 .btn {
   color: $sky-blue;
@@ -20,6 +23,10 @@ $white: rgb(255, 255, 255);
 
 .create-css {
   padding-top: 15px;
+  text-align: center;
+}
+
+.auth {
   text-align: center;
 }
 
@@ -41,8 +48,8 @@ textarea {
 }
 
 .index-title {
-  margin-left: 25%;
-  margin-right: 25%;
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0 300px;
 }
 
 .index-title:hover {
@@ -67,4 +74,24 @@ textarea {
 
 .content {
   text-align: center;
+}
+
+.resize {
+  height: auto;
+  width: 100px;
+}
+
+.back-to-signin {
+  margin: 0 300px;
+}
+
+.back-to-signin:hover {
+  background: $sky-blue;
+  border-radius: 100%;
+  color: $white;
+  cursor: pointer;
+}
+
+.post-show-content {
+  font-family: 'Ubuntu', sans-serif;
 }
