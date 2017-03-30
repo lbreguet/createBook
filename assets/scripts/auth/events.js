@@ -4,6 +4,7 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
 const ui = require('./ui')
+const postUi = require('../posts/ui')
 
 const store = require('../store')
 
@@ -55,6 +56,7 @@ const addHandlers = () => {
   $('.change-password').on('click', ui.changePasswordShow)
   $('.auth').on('submit', '#sign-up', onSignUp)
   $('#sign-in').on('submit', onSignIn)
+  $('.auth').on('click', '.back-to-menu', postUi.indexSuccess)
   $('.auth').on('submit', '#change-password', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
   $('#index-post').hide()

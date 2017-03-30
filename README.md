@@ -17,7 +17,4 @@
   - A user should be able to view specific posts
 
 ## WireFrames
-![WireFrame](https://github.com/lbreguet/createBook/blob/comments/FullSizeRender.jpg "WireFrame")
-
-## ERD
-![ERD](https://github.com/lbreguet/createBook/blob/comments/erd-createbook.JPG "ERD")
+![WireFrame](https://github.com/lbreguet/createBook/blob/comments/assets/img/FullSizeRender.jpg "WireFrame")

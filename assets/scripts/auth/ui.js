@@ -53,6 +53,8 @@ const signInFailure = () => {
 const changePasswordShow = () => {
   const changePasswordHtml = changePasswordTemplate()
   $('.auth').empty().append(changePasswordHtml)
+  $('.content').empty()
+  $('.create-css').empty()
 }
 
 const changePasswordSuccess = () => {
