@@ -81,6 +81,7 @@ const signOutSuccess = () => {
   $('.signin-email').val('')
   $('.signin-password').val('')
   $('.content').empty()
+  $('.auth').empty()
   $('.create-container').hide()
   $('#index-post').hide()
 }

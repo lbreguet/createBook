@@ -4,9 +4,9 @@ const config = require('../config')
 
 const store = require('../store')
 
-const index = function () {
+const index = function (id) {
   return $.ajax({
-    url: config.apiOrigin + '/comments',
+    url: `${config.apiOrigin}/posts/${id}/comments`,
     method: 'GET',
     headers: {
       Authorization: `Token token=${store.user.token}`
@@ -14,9 +14,9 @@ const index = function () {
   })
 }
 
-const create = function (data) {
+const create = function (data, id) {
   return $.ajax({
-    url: config.apiOrigin + '/comments',
+    url: `${config.apiOrigin}/posts/${id}/comments`,
     method: 'POST',
     headers: {
       Authorization: `Token token=${store.user.token}`

@@ -5,23 +5,16 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
 
-const onGetComments = (event) => {
-  event.preventDefault()
-  api.index()
-    .then(ui.indexSuccess)
-    .catch(ui.failure)
-}
-
 const onCreateComment = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.create(data)
-    .then(ui.success)
+  const id = event.target.dataset.id
+  api.create(data, id)
+    .then(ui.createSuccess)
     .catch(ui.failure)
 }
 
-const addHandlers = () => {
-  $('.content').on('dblclick', '.index-title', onGetComments)
+const addHandlers = function () {
   $('.content').on('submit', '#create-comment', onCreateComment)
 }
 

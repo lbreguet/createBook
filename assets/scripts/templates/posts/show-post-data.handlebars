@@ -1,4 +1,4 @@
-<div class="post-content">
+<div class="post-content" data-id="{{post.id}}">
   <div data-id='{{post.id}}'>
     <h3 class="index-title" data-id='{{post.id}}'>{{post.title}}</h3>
     <p>{{post.content}}</p>
@@ -48,6 +48,7 @@
   {{else}}
     <div></div>
   {{/if}}
+  <br>
   <div class="index-comment">{{> ../comments/index-comment}}</div>
   <br>
   <h4 class="back-to-menu">Back</h4>

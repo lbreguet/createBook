@@ -1,8 +1,19 @@
-{{#each comments as |comment|}}
 <div data-id="{{id}}">
-  <div class="comment-content" data-id="{{id}}">
-    <h4 data-id={{id}}>{{user.email}} commented:</h4>
-    <p>{{comment.body}}</p>
+  {{#each comments as |comment|}}
+    <br>
+    <div data-id="{{comment.post_id}}">
+      <div data-id="{{comment.post_id}}">
+        <p class="comment-content">{{comment.body}}</p>
+      </div>
+    </div>
+    <br>
+  {{/each}}
+  <div class="create-container">
+    <h3 class="create-form">Comment</h3>
+    <form data-id="{{post_id}}" id="create-comment">
+      <textarea data-id="{{comment.id}}" class="form-control textarea clear" name="comment[body]" placeholder="Type here" maxlength="250" rows="5"></textarea>
+      <br>
+      <button data-id="{{comment.post_id}}" type="submit" class="btn btn-default">Publish</button>
+    </form>
   </div>
 </div>
-{{/each}}

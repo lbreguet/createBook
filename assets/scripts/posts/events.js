@@ -2,6 +2,8 @@
 
 const getFormFields = require(`../../../lib/get-form-fields`)
 
+const commentsApi = require('../comments/api')
+const commentsUi = require('../comments/ui')
 const api = require('./api')
 const ui = require('./ui')
 
@@ -25,6 +27,8 @@ const onShowPost = (event) => {
   const id = event.target.dataset.id
   api.show(id)
     .then(ui.showSuccess)
+    .then(commentsApi.index(id)
+          .then((data) => commentsUi.indexSuccess(data, id)))
     .catch(ui.failure)
 }
 
@@ -60,7 +64,7 @@ const addHandlers = () => {
   $('.menu').on('click', onMenu)
   $('.content').on('click', '.back-to-menu', onMenu)
   $('#index-post').on('submit', onGetPosts)
-  $('.content').on('dblclick', '.index-title', onShowPost)
+  $('.content').on('click', '.index-title', onShowPost)
   $('.create-css').on('click', '.clear-form', ui.clearCreateForm)
   $('.create-css').on('submit', '#create-post', onCreatePost)
   $('.content').on('submit', '#edit-post', onUpdatePost)
