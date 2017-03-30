@@ -6,6 +6,7 @@ $blue: rgb(0, 48, 255);
 $grey: rgb(111, 124, 119);
 $black: rgb(0, 0, 0);
 $red: rgb(255, 0, 0);
+$white: rgb(255, 255, 255);
 
 .btn {
   color: $sky-blue;
@@ -40,11 +41,14 @@ textarea {
 }
 
 .index-title {
-  margin-right: 100%;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 .index-title:hover {
-  background: $red;
+  background: $sky-blue;
+  border-radius: 100%;
+  color: $white;
   cursor: pointer;
 }
 
@@ -59,4 +63,8 @@ textarea {
 
 .comment-content {
   border: 1px solid $sky-blue;
+}
+
+.content {
+  text-align: center;
 }
