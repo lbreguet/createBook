@@ -17,7 +17,7 @@ const onCreateComment = (event) => {
       .then(postUi.showSuccess)
       .then(api.index(id)
         .then((data) => ui.indexSuccess(data, id))))
-    .catch(ui.failure)
+    .catch(ui.createFailure)
 }
 
 const onUpdateComment = (event) => {
@@ -37,10 +37,10 @@ const onDestroyComment = (event) => {
   const id = event.target.dataset.id
   const postId = $('.show-title').data('id')
   api.destroy(id)
-    // .then(ui.success)
+    .then(ui.deleteSuccess)
     .then(() => api.index(postId)
       .then((data) => ui.indexSuccess(data, postId)))
-    // .catch(ui.failure)
+    .catch(ui.deleteFailure)
 }
 
 const addHandlers = function () {
