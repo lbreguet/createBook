@@ -20,7 +20,7 @@ const signUpSuccess = () => {
 }
 
 const signUpFailure = () => {
-  $('.auth-message').text('This user already exists. Please choose another email.').css('color', 'red').show(0).delay(1000).fadeOut(500)
+  $('.auth-message').text('This user already exists or passwords don\'t match!').css('color', 'red').show(0).delay(1000).fadeOut(500)
 }
 
 const signInShow = () => {
