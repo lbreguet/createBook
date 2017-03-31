@@ -1,22 +1,21 @@
-<div data-id="{{id}}">
+
   {{#each comments as |comment|}}
-    <div data-id="{{comment.post_id}}">
-      <div data-id="{{comment.post_id}}">
+    <div data-postId="{{comment.post_id}}" data-id="{{comment.id}}">
+      <div data-postId="{{comment.post_id}}" data-id="{{comment.id}}">
         <br>
         <p class="comment-content">{{comment.body}}</p>
       </div>
-      {{log comment.editable}}
       {{#if comment.editable}}
       <div>
-        <div data-id="{{comment.id}}" class="btn-group comment-destroy">
-          <button type="button" data-id="{{comment.id}}" class="btn btn-danger">
+        <div data-id="{{comment.id}}" data-postId="{{comment.post_id}}" class="btn-group comment-destroy">
+          <button type="button" data-id="{{comment.id}}" data-postId="{{comment.post_id}}" class="btn btn-danger">
             Delete
           </button>
         </div>
 
-        <button data-id="{{comment.id}}" type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" id="edit-modal">Edit</button>
+        <button data-id="{{comment.id}}" data-postId="{{comment.post_id}}" type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" id="edit-modal">Edit</button>
 
-        <div data-id="{{comment.id}}" class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div data-id="{{comment.id}}" data-postId="{{comment.post_id}}" class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -27,13 +26,13 @@
               </div>
               <p class="update-failure"></p>
               <div class="modal-body">
-                <form data-id="{{comment.id}}" class="modal-edit" id="edit-comment">
+                <form data-id="{{comment.id}}" data-postId="{{comment.post_id}}" class="modal-edit" id="edit-comment">
                   <div class="form-group">
                     <label for="message-text" class="form-control-label">Content:</label>
                     <br>
                     <textarea required="required" data-id="{{comment.body}}" class="edit-body" name="comment[body]" value="{{comment.body}}" maxlength="175" rows="5">{{comment.body}}</textarea>
                   </div>
-                  <button data-id="{{comment.id}}" type="submit" class="btn btn-default">Confirm</button>
+                  <button data-id="{{comment.id}}" data-postId="{{comment.post_id}}" type="submit" class="btn btn-default">Confirm</button>
                 </form>
                 <div class="modal-footer">
                 </div>
@@ -56,4 +55,3 @@
       <button data-id="{{comment.post_id}}" type="submit" class="btn btn-default">Publish</button>
     </form>
   </div>
-</div>

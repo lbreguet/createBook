@@ -5,7 +5,6 @@ const showPostTemplate = require('../templates/posts/show-post-data.handlebars')
 const createPostTemplate = require('../templates/posts/create-post-data.handlebars')
 
 const indexSuccess = (data) => {
-  console.log(data)
   const indexPostsHtml = indexPostsTemplate({ posts: data.posts })
   const createPostHtml = createPostTemplate()
   $('.content').empty().append(indexPostsHtml)
@@ -14,7 +13,6 @@ const indexSuccess = (data) => {
 }
 
 const showSuccess = (data) => {
-  console.log(data)
   const showPostHtml = showPostTemplate({ post: data.post })
   $('.content').empty().append(showPostHtml)
   $('.create-css').empty()
@@ -25,13 +23,11 @@ const clearCreateForm = () => {
   $('.clear').val('')
 }
 
-const createSuccess = (data) => {
-  console.log(data)
+const createSuccess = () => {
   $('.clear').val('')
 }
 
-const updateSuccess = (data) => {
-  console.log(data)
+const updateSuccess = () => {
   $('#myModal').modal('hide')
 }
 

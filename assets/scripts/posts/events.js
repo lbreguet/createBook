@@ -12,14 +12,14 @@ const onGetPosts = (event) => {
   const data = getFormFields(event.target)
   api.searchPosts(data.post)
     .then(ui.indexSuccess)
-    .catch(ui.failure)
+    // .catch(ui.failure)
 }
 
 const onMenu = () => {
   // event.preventDefault()
   api.index()
     .then(ui.indexSuccess)
-    .catch(ui.failure)
+    // .catch(ui.failure)
 }
 
 const onShowPost = (event) => {
@@ -29,16 +29,16 @@ const onShowPost = (event) => {
     .then(ui.showSuccess)
     .then(() => commentsApi.index(id))
     .then((data) => commentsUi.indexSuccess(data, id))
-    .catch(ui.failure)
+    // .catch(ui.failure)
 }
 
 const onCreatePost = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.create(data)
-    .then(ui.success)
+    // .then(ui.success)
     .then(() => onMenu())
-    .catch(ui.failure)
+    // .catch(ui.failure)
 }
 
 const onUpdatePost = (event) => {
@@ -48,16 +48,16 @@ const onUpdatePost = (event) => {
   api.update(data, id)
     .then(ui.updateSuccess)
     .then(() => onMenu())
-    .catch(ui.failure)
+    // .catch(ui.failure)
 }
 
 const onDestroyPost = (event) => {
   event.preventDefault()
   const id = event.target.dataset.id
   api.destroy(id)
-    .then(ui.success)
+    // .then(ui.success)
     .then(() => onMenu())
-    .catch(ui.failure)
+    // .catch(ui.failure)
 }
 
 const addHandlers = () => {
