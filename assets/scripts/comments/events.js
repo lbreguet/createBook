@@ -13,10 +13,10 @@ const onCreateComment = (event) => {
   const id = event.target.dataset.id
   api.create(data, id)
     .then(ui.createSuccess)
-    .then(() => postApi.show(id)
-      .then(postUi.showSuccess)
-      .then(api.index(id)
-        .then((data) => ui.indexSuccess(data, id))))
+    .then(() => postApi.show(id))
+    .then(postUi.showSuccess)
+    .then(() => api.index(id)
+    .then((data) => ui.indexSuccess(data, id)))
     .catch(ui.createFailure)
 }
 
