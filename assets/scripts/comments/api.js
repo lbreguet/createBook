@@ -27,7 +27,7 @@ const create = function (data, id) {
 
 const update = function (data, id) {
   return $.ajax({
-    url: config.apiOrigin + '/comments/' + id,
+    url: `${config.apiOrigin}/comments/${id}`,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`
@@ -38,7 +38,7 @@ const update = function (data, id) {
 
 const destroy = function (id) {
   return $.ajax({
-    url: config.apiOrigin + '/comments/' + id,
+    url: `${config.apiOrigin}/comments/${id}`,
     method: 'DELETE',
     headers: {
       Authorization: `Token token=${store.user.token}`

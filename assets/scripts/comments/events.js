@@ -17,12 +17,39 @@ const onCreateComment = (event) => {
     .then(() => postApi.show(id)
       .then(postUi.showSuccess)
       .then(api.index(id)
-            .then((data) => ui.indexSuccess(data, id))))
-      .catch(ui.failure)
+        .then((data) => ui.indexSuccess(data, id))))
+    .catch(ui.failure)
+}
+
+const onUpdateComment = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const id = event.target.dataset.id
+  api.update(data, id)
+    .then(ui.updateSuccess)
+    .then(() => postApi.show(id)
+      .then(postUi.showSuccess)
+      .then(api.index(id)
+        .then((data) => ui.indexSuccess(data, id))))
+    .catch(ui.failure)
+}
+
+const onDestroyComment = (event) => {
+  event.preventDefault()
+  const id = event.target.dataset.id
+  api.destroy(id)
+    .then(ui.success)
+    .then(() => postApi.show(id)
+      .then(postUi.showSuccess)
+      .then(api.index(id)
+        .then((data) => ui.indexSuccess(data, id))))
+    .catch(ui.failure)
 }
 
 const addHandlers = function () {
   $('.content').on('submit', '#create-comment', onCreateComment)
+  $('.content').on('submit', '#edit-comment', onUpdateComment)
+  $('.content').on('click', '.comment-destroy', onDestroyComment)
 }
 
 module.exports = {
