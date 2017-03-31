@@ -1,6 +1,18 @@
 # CreateBook
 
 
+## Back-end
+https://github.com/lbreguet/createbook-api
+
+
+## Deployed Client
+https://lbreguet.github.io/createBook/
+
+
+## Deployed API
+https://createbook-api.herokuapp.com/
+
+
 ## What is CreateBook
 
 Drawing inspiration from my second project, I wanted to create an area where
